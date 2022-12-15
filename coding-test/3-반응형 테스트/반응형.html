@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>마크업 테스트</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		@font-face{font-family:SamsungOneKorean;src:url(https://cdn.samsung.com/etc/designs/smg/sec/font/SamsungOneKorean-400.eot);src:url(https://cdn.samsung.com/etc/designs/smg/sec/font/SamsungOneKorean-400.eot?#iefix) format("embedded-opentype"),url(https://cdn.samsung.com/etc/designs/smg/sec/font/SamsungOneKorean-400.woff2) format("woff2"),url(https://cdn.samsung.com/etc/designs/smg/sec/font/SamsungOneKorean-400.woff) format("woff"),url(https://cdn.samsung.com/etc/designs/smg/sec/font/SamsungOneKorean-400.ttf) format("truetype");font-weight:400;font-style:normal}
+		* {padding:0; margin:0; border:0; list-style:none;}
+		body {font-family:'SamsungOneKorean';}
+		a {text-decoration:none; color:inherit;}
+	</style>
+</head>
+<body>
+
+<!--
+
+	[ 반응형 웹 코딩 ]
+	
+	# 분기 (아래 <style>에 있는 @media 부분은 본인이 편하게 재선언해도 됨)
+		- pc : 1440px 이상 (가운데 정렬)
+		- 태블릿 : 769px ~ 1439px (가로 화면 100% 채움) (vw로 작업)
+		- 모바일 : ~768px (가로 화면 100% 채움) (vw로 작업)
+
+	# vw 변환 사이트 참고
+		http://publishing.kr/vw/
+
+	# 폰트크기 참고
+		pc
+			- 타이틀 64px
+			- 설명글 18px
+			- 링크 14px
+		mo
+			- 타이틀 74px
+			- 설명글 30px
+			- 링크 30px
+
+	# 나머지 간격 등(padding, margin, border)은 눈대중으로 대충 줘도 됨 (정확하게 똑같을 필요 없음)
+
+	# 주의
+		- pc와 mobile 이미지가 다름 (pc-bg.jpg / mo-bg.jpg)
+		- mobile에서는 타이틀이 2줄이 됨
+	# 링크
+		- 링크주소 : https://www.samsung.com/sec/cooking-appliances/cooktop-nz63r9770tg
+		- 링크는 새창으로 열림
+
+-->
+
+<main>
+	<section>
+		<div id="main_pc" class="section">
+			<div class="container">
+				<h2>셰프컬렉션<span> 인덕션</span></h2>
+				<p class="pc_1">세상에 없던 불꽃, 요리의 맛을 깨우다</p>
+				<p class="pc_2"><a href="https://www.samsung.com/sec/cooking-appliances/cooktop-nz63r9770tg" target="_blank">제품 보기</a></p>
+			</div>
+		</div>
+	</section>
+</main>
+
+<style>
+.container {
+width: 100%;
+max-width: 1920px;
+padding: 0 100px;
+margin: 0 auto;
+box-sizing: border-box;
+}
+
+.section {
+  padding: 120px 0;
+}
+
+#main_pc h2 {
+	font-size: 4.4vw;
+	
+}
+
+#main_pc .pc_1 {
+	padding: 30px 0;
+	font-size: 1.2500vw;
+}
+
+#main_pc .pc_2 {
+	width: 5vw;
+	padding: 15px 30px;
+	border: 1px solid #000;
+	border-radius: 50px;
+	text-align: center;
+	font-size: 0.97vw;
+	font-weight: bold;
+
+}
+
+@media (min-width:1440px) {
+	#main_pc {
+		width: 100vw !important;
+		height: 43vh !important;
+		
+		background: url(img/pc-bg.jpg) no-repeat center / cover !important;
+	
+	}
+}
+
+
+@media (min-width:769px) {
+	#main_pc {
+		width: 100vw;
+		height: 100vw;
+		background: url(img/mo-bg.jpg) no-repeat center / cover;
+		
+	}
+
+	
+}
+
+
+
+@media (max-width:768px) {
+	#main_pc {
+		width: 100vw;
+		height: 100vw;
+		background: url(img/mo-bg.jpg) no-repeat center / cover;
+		text-align: center;
+	}
+
+	#main_pc span {
+		display: block;
+	}
+
+	#main_pc h2 {
+		font-size: 9.1389vw;
+		
+	}
+
+	#main_pc .pc_1 {
+		font-size: 4.25vw !important;
+	}
+
+	#main_pc .pc_2 {
+		font-size: 4.25vw !important;
+		display: inline-block;
+		width: 25vw;
+	}
+	
+}
+</style>
+
+</body>
+</html>

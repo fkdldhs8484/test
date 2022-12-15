@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>레이어팝업</title>
+	<style>* {padding:0; margin:0; border:0; list-style:none; font-size:16px;}</style>
+</head>
+<body>
+
+<!--
+
+	Open 버튼을 클릭하면 .layer가 .wrap의 가로세로 중앙에 오도록 작업
+	
+	- css는 아래 <style>에 작성
+	- js는 자유롭게 작성
+
+-->
+
+<style>
+.wrap {width:1200px; height:800px; margin:0 auto; background:grey;}
+.wrap button {width:100px; height:50px; background:red; color:white;}
+.layer {width:700px; height:500px; background:blue; color:white;}
+
+/* 수정 및 추가 css는 아래에 작성 (위 css 건드리지 말것) */
+.wrap {
+	position: relative;
+}
+
+.layer {
+	position: absolute;
+
+}
+
+</style>
+
+<div class="wrap">
+	<button type="button">Open</button>
+	<div class="layer">Layer</div>
+</div>
+
+<script src="./jquery-1.12.4.min.js"></script>
+
+<script>
+	function layer() {
+    
+    var box = document.querySelector(".layer");
+   box.style.margin = "auto";
+   box.style.top = "50%";
+   box.style.left = "50%";
+   box.style.transform = "translate(-50%,-50%)"
+   
+}
+
+var btn = document.querySelector("button");
+
+btn.addEventListener("click", layer);
+
+</script>
+
+</body>
+</html>

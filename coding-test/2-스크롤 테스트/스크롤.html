@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>스크롤</title>
+	<style>* {padding:0; margin:0; border:0; list-style:none; font-size:16px;}</style>
+</head>
+<body>
+
+<!--
+	스크롤이 .sec02 영역에 진입했을 때, 
+	.sec02 영역의 배경색을 [검정색]으로 변경하세요.
+
+	- js 자유롭게 작성
+-->
+
+<style>
+.sec01 {height:400px; background-color:yellow;}
+.sec02 {height:800px; background-color:pink;}
+.sec03 {height:1500px; background-color:green;}
+</style>
+
+<main>
+	<section class="sec01">영역 1</section>
+	<section class="sec02">영역 2</section>
+	<section class="sec03">영역 3</section>
+</main>
+
+<script src="./jquery-1.12.4.min.js"></script>
+
+<script>
+$(document).ready(function(){       
+
+var scroll_pos = 0;
+
+$(document).scroll(function() { 
+
+	scroll_pos = $(this).scrollTop();
+
+	if(scroll_pos > 300) {
+
+		$(".sec02").css('background-color', 'black');
+
+	} else {
+
+		$(".sec02").css('background-color', 'pink');
+
+	}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
